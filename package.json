@@ -12,7 +12,7 @@
     "express-session": "^1.17.0",
     "faker": "^4.1.0",
     "hover.css": "^2.3.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "knock-knock-jokes": "^1.7.0",
     "locus": "^2.0.4",
     "method-override": "^3.0.0",
