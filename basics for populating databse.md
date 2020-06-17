@@ -1,0 +1,54 @@
+
+show dbs
+use railway_reservation
+  
+show collections
+
+
+
+
+
+db.seats.insert({one_A : 111, two_A : 111, three_A : 111, sleeper : 111 });
+
+db.seats.insert(one_A : 111, two_A : 111, three_A : 111, sleeper : 111 });
+
+db.seats.insert({one_A : 111, two_A : 111, three_A : 111, sleeper : 111 });
+
+db.seats.insert({one_A : 111, two_A :111, three_A : 111, sleeper :111 });
+
+
+
+
+
+
+
+
+
+db.seats.find();
+
+
+
+//now ek ek kreke obeject id trainn vale me dalana h
+
+
+
+
+
+
+
+db.trains.insert({ source :"PATNA" , destination :"MANGALORE" , train_details : [ { number : "1225", name : "RAJDGI EXPRESS", fare : 1713, travel_time : "31H:05min:10sec", start_time : "19:10" } ], no_of_seats : { one_A : 111 , two_A : 111 , "three_A" : 111, sleeper : 111 }, no_of_station : 91, distance : "989 Km",seats_status : [ ObjectId("  ")]});
+
+
+upar me obeject id daale 
+
+
+
+
+
+db.trains.insert({ source : "MANGALORE", destination : "KOLKATA", train_details : [ { number : "7225", name : "KAVGDI EXPRESS", fare : 1143, travel_time : "29H:30min:21sec", start_time : "19:10" } ], no_of_seats : { one_A :11, two_A : 11 ,three_A :11, sleeper :11 }, no_of_station : 59, distance : "1979 Km", seats_status : [ ObjectId("     ")]});
+
+
+
+
+
+

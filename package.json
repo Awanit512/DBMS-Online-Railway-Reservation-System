@@ -1,0 +1,33 @@
+{
+  "name": "railway_reservation",
+  "version": "1.0.0",
+  "description": "a simulator or site demonstration for railwaty reservation as like irctc",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cat-me": "^1.0.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "faker": "^4.1.0",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.4.1",
+    "knock-knock-jokes": "^1.7.0",
+    "locus": "^2.0.4",
+    "method-override": "^3.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Awanit Ranajn and Vivek Kumar",
+  "license": "MIT"
+}
