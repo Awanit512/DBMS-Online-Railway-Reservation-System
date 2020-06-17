@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train List</title>
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ -->
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+  body{background:url(https://images.pexels.com/photos/2790396/pexels-photo-2790396.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);background-size: cover;background-repeat: no-repeat;
+}
+
+/*
+#xcv {
+  width: 100px;
+
+  background: red;
+  transition-property: width;
+  transition-duration: 20s;
+  transition-delay: 0.01s;
+}
+
+#xcv:hover {
+  width: 900px;
+}*/
+
+
+/*
+.box:hover {
+  background-image: linear-gradient(green,yellow);
+  cursor: pointer;
+  -webkit-transition: background-image 2s ease-out;
+  -moz-transition: background-image 2s ease-out;
+  -o-transition: background-image 2s ease-out;
+  transition: background-image 2s ease-out;
+}
+*/
+
+
+</style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-demo1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a href="###" style="color:white" class="navbar-brand"><i style="color:orange" class="fab fa-alipay"></i></i> TRAIN LIST</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-demo1">
+  
+  <div class ="nav navbar-nav">
+    
+    <li><a style="color:gold" href="/"><i style="color:tan" class="fas fa-home"></i> Home</a></li>
+    <li><a style="color:tomato" href="/helpline"><i style="color:cyan" class="fa fa-phone" aria-hidden="true"></i> 
+ Helpline</a></li>
+    
+  </div>
+  <div class ="nav navbar-nav navbar-right">
+    <!----<li><button  class="btn btn-success">Login</button></li>----->
+  
+    <li><a href="/register"><i style="color:green" class="fas fa-user-plus"></i> Signup</a></li>
+    <li><a href="/login"><i style="color:blue" class="fas fa-sign-in-alt"></i> Login</a></li>
+    <li><a href="/"><i style="color:blue" class="fas fa-sign-out-alt"></i> Logout</a></li>
+   
+    
+  </div>
+    </div>
+
+  </nav>
+
+
+  
+<h1  class="box" id="xcv" style="width:1020px;color:white;box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); height:120px;margin-left:100px"><span style="margin-top:150px;margin-left:200px;" ><span style="margin-top:100px;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"><u><%= source%></u><span style="margin-top: 100px"> <b>To</b> <span  style="margin-top: 100px;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"><u>  <%= destination%> </u> on <span><u><%= date%></u></span></span></h1>
+
+<!-- 
+<% trains.forEach(function(train){ %>
+   <% train.train_details.forEach(function(f){ %> -->
+  <!--     <li><%=f.name%></li>  -->
+<!-- <%})%>
+<%})%> -->
+
+
+<% var i=0;%>
+
+
+<div class="container" >
+	<h1 style="text-align: center;color:red;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"><i>Check Your Train Availability</i></h1>
+<table  style="color:darkslategray" class="table table-hover ">
+  <thead>
+    <tr style="background-color:darkslategray;color:white">
+      <th scope="col"><i style="color:tan;padding-left: 30px;padding-top: 15px" class="fas fa-star"></i></th>
+      <th scope="col"  style="padding-left: 29px;">TrainNumber</th>
+
+      <th scope="col"  style="padding-left: 29px;padding-top: 15px">TrainName</th>
+      <th scope="col" style="padding-left: 29px;padding-top: 15px ">JourneyTime</th>
+
+      <th scope="col" style="padding-left: 29px;padding-top: 15px">DepartureTime</th>
+      <th scope="col" style="padding-left: 29px;">Fare</th>
+  <!--     background-image: linear-gradient(  mediumvioletred,  lightpink); 
+  darkmagenta
+
+
+
+
+  seagreen -->
+
+
+
+      <!-- background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);  -->
+      <th scope="col" style="padding-left: 15px;color:white">Check Availability</th>
+    </tr>
+    </tr>
+  </thead>
+    
+    	<% trains.forEach(function(train){ %>
+   <% train.train_details.forEach(function(f){ %>
+   <tbody>
+      <tr class="bg-success">
+      <th style="padding-left:15px;"  scope="row"><%= ++i%>.</th>
+      <td  style="padding-left: 15px;color:black;  "><b><%=f.number%></b></td>
+      <td style="color:black;padding-left: 15px;"><b><%=f.name%></b></td>
+      <td style="padding-left: 15px;color:black;b"><b><%=f.travel_time%></b></td>
+      <td style="color:black;padding-left: 15px;"><b><%=f.start_time%></b></td>
+      <td  style="padding-left: 15px;color:black; "><i class="fa fa-inr" style="font-size:25px;color:black;padding-top:10px"></i> <b><%=f.fare%></b></td>
+      <td>
+        <a class="btn btn-warning" style="font-size:16px;color:black;" href="/train/show/check_availability/<%=train._id%>/<%=date%>">Check Availability</a>
+      </td><!-- background-image: linear-gradient(darkorchid,purple);" -->
+    </tr>
+    </tbody>
+    <%})%>
+      <%})%>
+</table>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</body>
+</html>

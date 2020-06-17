@@ -1,0 +1,28 @@
+#abc{
+	padding-top: 3px;  
+	padding-bottom: 3px; 
+	background-color:  rgb(107, 107, 71);
+
+}
+
+#abcd{
+			}
+
+#title{
+	text-align: center;
+	font-style: bold;
+	color: white;
+
+	
+}
+
+.container{
+	color: rgb(153, 51, 1);
+}
+
+.jumbotron {
+    background-image: url("https://www.tutorialmines.net/wp-content/uploads/2015/11/info-icon.png");
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: right top;
+}

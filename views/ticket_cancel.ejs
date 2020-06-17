@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cancel Ticket</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<style>
+  body {
+  background:url(https://images.pexels.com/photos/1029612/pexels-photo-1029612.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-header {
+  z-index: 1000;
+  position: relative;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+/*#landing-header h1 {
+  color: #fff;
+}*/
+/*
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+*/
+/*.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}*/
+
+/*.slideshow li:nth-child(1) { 
+  background-image: url(https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260) 
+}*/
+/*http://i.imgur.com/K3mPv14.jpg*/
+/*.slideshow li:nth-child(2) { 
+  background-image: url(https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  animation-delay: 10s; 
+}*//*http://i.imgur.com/SBEmFpv.jpg*/
+/*.slideshow li:nth-child(3) { 
+  background-image: url(https://images.pexels.com/photos/251603/pexels-photo-251603.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  animation-delay: 20s; 
+}*//*http://i.imgur.com/emvhOnb.jpg*/
+/*.slideshow li:nth-child(4) { 
+  background-image: url(https://images.pexels.com/photos/696644/pexels-photo-696644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  animation-delay: 30s; 
+}*//*http://i.imgur.com/2LSMCmJ.jpg*/
+/*.slideshow li:nth-child(5) { 
+  background-image: url(https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  animation-delay: 40s; 
+}*//*http://i.imgur.com/TVGe0Ef.jpg*/
+
+/*@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}*/
+
+/* Older browser support - class added by modernizr */
+/*.no-cssanimations .slideshow li {
+  opacity: 1;
+}*/
+</style>
+
+
+
+
+
+
+
+</head>
+
+<body><!-- <div class="landing-header"> -->
+
+
+
+  <nav  style ="margin-top:1px;padding-top:0px;background-color:darkcyan;" class="landing-header navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-demo1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a href="###" style="color:gold" class="navbar-brand"><i style="color:red" class="fab fa-battle-net"></i> Ticket-Cancel </a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-demo1">
+  
+  <div class ="nav navbar-nav">
+    
+    <li><a style="color:black" href="/"><i class="fas fa-home"></i> Home</a></li>
+    <li><a style="color:magenta" href="/helpline"><i class="fa fa-phone" aria-hidden="true"></i>
+ Helpline</a></li>
+    
+  </div>
+  <div class ="nav navbar-nav navbar-right">
+    <!----<li><button  class="btn btn-success">Login</button></li>----->
+    <!-- <li><a href="/register"><i class="fas fa-user-plus"></i> Signup</a></li> -->
+    <li><a style="color:lime" href="/login"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    
+  </div>
+    </div>
+
+  </nav>
+  <div class="landing-header">
+
+
+
+
+<h1 style="text-align: center;color:blue;"><u> Cancelled Ticket Details </u></h1>
+
+
+
+
+
+
+<hr>
+
+  <div>
+    <span style="margin-left:40px">
+       
+      <span style="font-family: Charcoal;color:orange">Train_Id:</span><span style="font-family:Helvetica">  <%=ticket.train_id%></span>
+    <span style="float:right;margin-right:510px">
+         <span style="font-family: Charcoal;color:orange">PNR No:</span><span style="font-family:Helvetica"> <%=pnr%></span>
+    </span>
+
+
+  </div>
+
+
+
+
+<hr> 
+
+
+
+  <div>
+    <span >
+        <span style="font-family:Charcoal;color:orange;">Class:</span><span style="font-family:Helvetica"><%=ticket.classs%></span>
+    </span>
+    <span style="float:right;margin-right:600px">
+          <span style="font-family: Charcoal;color:red">Price:</span><span style="font-family:Helvetica"> <i class="fa fa-inr" style="display: inline-block;font-size:25px;color:black"></i> <%=ticket.price%></span>
+  </span>
+
+  </div>
+
+
+<hr>
+
+
+
+  <div>
+    <span style="margin-left:48px">
+
+        <span style="font-family: Charcoal;color:red">Ticket-Ref Id:</span><span style="font-family:Helvetica"> <%=ticket.train_id%></span>
+      
+    </span>
+    <span style="float:right;margin-right:400px">
+
+        <span style="font-family: Charcoal;color:orange">Passenger Ref-Id:</span><span style="font-family:Helvetica"> <%=ticket.pass%></span>
+      
+    </span>
+  </div>
+
+  <hr>
+
+
+
+  <br>
+
+
+<h4 style="text-align: center;color:green;"><i> 30% money i.e   <i class="fa fa-inr" style="font-size:25px;color:black"></i> <span style="color:brown"><i><%=ticket.price*.03%></u></span> will Be Refundeed soon to YOU  </u></h4>
+  <br>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  
+
+</body>
+</html>
+
+                         

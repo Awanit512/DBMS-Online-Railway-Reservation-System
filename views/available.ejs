@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trains Availability</title>
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+<!-- 
+  //from w3c  -->
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+	body{background:url(https://images.pexels.com/photos/2565083/pexels-photo-2565083.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);}
+</style></head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Available Trains</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+   <div  style="margin-left:20px" ><li class="nav-item">
+     <a style="color:white;display:inline-block" class="nav-link" href="/"><i  class="fas fa-home">Home</i></a>
+    </li></div><div style="margin-left:30px" >
+    <li class="nav-item">
+      <a class="nav-link" style="color:white;display:inline-block" href="/helpline"><i class="fa fa-phone" aria-hidden="true">HelpLine</i> </a>
+    </li> </div></ul>
+
+    <!-- Dropdown -->
+   <div class ="navbar-nav" style="margin-left:600px">
+		<!----<li><button  class="btn btn-success">Login</button></li>----->
+	<!-- 	<li><a href="/register"><i class="fas fa-user-plus"></i> Signup</a></li> -->
+<li><a  style="color:white;display:inline" href="/logout"><i class="fas fa-sign-in-alt"></i> SignUp</a></li>
+
+		
+	</div>
+
+
+
+     <div class ="nav navbar-nav navbar-right" style="margin-left:30px">
+		<!----<li><button  class="btn btn-success">Login</button></li>----->
+	<!-- 	<li><a href="/register"><i class="fas fa-user-plus"></i> Signup</a></li> -->
+
+		
+		<li><a  style="color:white;display:inline" href="/logout"><i class="fas fa-sign-out-alt"></i> Login</a></li>
+		
+	</div>
+    
+  
+</nav>
+<br>
+
+
+<div style="background-color:grey;">
+  <div class="container">
+<h1><span style="font-family:Georgia;font-weight:bold;color:white;"><i class='fas fa-archway' style='font-size:48px;color:green'></i> <u><%= train.source%></u></span> <b style="color:white">To</b> <span style="font-family:Georgia;font-weight:bold;color:white;color:white;">       <i class='fas fa-hotel' style='font-size:48px;color:red'></i> <u>   <%= train.destination%></u></span><span style="margin-left:20px;color:white;">  on <span><i class='fas fa-calendar-alt' style='font-size:48px;color:blue'></i> <u><b><%= date%></b></u></span></span></h1>
+</div></div>
+
+
+<% var f_class=seats.one_A %>
+<% var s_class=seats.two_A %>
+<% var t_class=seats.three_A %>
+<% var sleeper=seats.sleeper %>
+<!-- <% var sleeper=seats.sleeper %> -->
+<% var t=train.train_details[0]%>
+<% var i=0;%>
+<% var price=0;%>
+
+<!-- 
+<h2>
+	<%=f_class%>
+	<%=s_class%>
+	<%=t_class%>
+	<%=sleeper%>
+</h2> -->
+<br><br><br>
+<% if( f_class>0 || s_class>0 ||  t_class>0 || sleeper>0 ){%>
+<h1 style="color:yellowgreen;font-family:Palatino Linotype;font-weight:bold;text-align: center;text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px khaki;"><u>Classes Available</u>
+</h1><br><br>
+<div class="container" >
+<table  class="table table-dark table-striped table-hover"><!-- class="table table-hover table-dark" -->
+  <thead>
+    <tr style="background:olive">
+      <th >Sr.</th>
+      <th style="background:olive">TrainNumber</th>
+      <th >TrainName</th>
+      <th style="background:olive">JourneyTime</th>
+      <th >DepartureTime</th>
+      <th style="background:olive">Fare</th>
+      <th >Class</th>
+    </tr>
+    </tr>
+  </thead><tbody>
+<%if(f_class>0){%>
+	
+
+   
+      <tr ><!-- style="background:darkred" -->
+      <th style="background:khaki;color:black" scope="row"><%= ++i%>.</th>
+      <td style="background:khaki;color:black"><%=t.number%></td>
+      <td style="background:khaki;color:black"><%=t.name%></td>
+      <td style="background:khaki;color:black"><%=t.travel_time%></td>
+      <td style="background:khaki;color:black"><%=t.start_time%></td>
+      <td style="background:khaki;color:black"><i class="fa fa-inr" style="padding-top:15px;font-size:25px;color:black"></i> <%=1000+(t.fare)%></td>
+      <td style="background:khaki;color:black">
+        <a style="font-size:13px;color:black;;margin-top:15px"   class="btn btn-info btn-lg" href="/train/show/check_availability/<%=train._id%>/<%=date%>/one_A/<%=1000+(t.fare)%>/secret">BOOK For First AC (1A)</a>
+      </td>
+    </tr>
+    
+   
+
+<%}%>
+
+<%if(s_class>0){%>
+	<tr ><!-- style="background:teal" -->
+      <th style="background:lightgoldenrodyellow;color:black" scope="row"><%= ++i%>.</th>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.number%></td>
+      <td style="background:lightgoldenrodyellow;color:black" ><%=t.name%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.travel_time%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.start_time%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><i class="fa fa-inr" style="padding-top:15px;font-size:25px;color:black"></i> <%=500+(t.fare)%></td>
+      <td style="background:lightgoldenrodyellow;">
+        <a style="font-size:12px;color:black;margin-top:10px" class="btn btn-warning btn-lg" href="/train/show/check_availability/<%=train._id%>/<%=date%>/two_A/<%=500+(t.fare)%>/secret">BOOK For Second AC (2A)</a>
+      </td>
+    </tr>
+<%}%>
+
+<%if(t_class>0){%>
+	<tr  ><!-- style="background:olive" -->
+      <th style="background:khaki;color:black" scope="row"><%= ++i%>.</th>
+      <td style="background:khaki;color:black"><%=t.number%></td>
+      <td style="background:khaki;color:black"><%=t.name%></td>
+      <td style="background:khaki;color:black"><%=t.travel_time%></td>
+      <td style="background:khaki;color:black"><%=t.start_time%></td>
+      <td style="background:khaki;color:black"><i class="fa fa-inr" style="padding-top:15px;font-size:25px;color:black;"></i> <%=250+(t.fare)%></td>
+      <td style="background:khaki">
+        <a style="font-size:13px;color:black;margin-top:8px" class="btn btn-danger btn-lg" href="/train/show/check_availability/<%=train._id%>/<%=date%>/three_A/<%=250+(t.fare)%>/secret">BOOK For Third AC (3A)</a>
+      </td>
+    </tr>
+<%}%>
+
+<%if(sleeper>0){%>
+	<tr><!-- style="background: 	darkslateblue" -->
+      <th style="background:lightgoldenrodyellow;color:black" scope="row"><%= ++i%>.</th>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.number%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.name%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.travel_time%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><%=t.start_time%></td>
+      <td style="background:lightgoldenrodyellow;color:black"><i  class="fa fa-inr" style="padding-top:15px;font-size:25px;color:black"></i> <%=t.fare%></td>
+      <td style="background:lightgoldenrodyellow">
+ <a style="font-size:14px;color:black;margin-top:6px" class="btn btn-success btn-lg" href="/train/show/check_availability/<%=train._id%>/<%=date%>/sleeper/<%=t.fare%>/secret">BOOK For Sleeper (SL)</a>
+      </td>
+    </tr>
+<%}%>
+</tbody>
+</table>
+</div>
+<%}else {%>
+	<h1 style="color:yellowgreen;font-family:Palatino Linotype;font-weight:bold;text-align: center;text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px khaki;text-align: center" >Sorry !! seats are occupied go for tatkal at 10:AM before two days from journey .
+
+</h1>
+<%}%>
+
+<!-- <h3>
+
+<%=seats.one_A%>
+<%=seats.two_A%>
+<%=seats.three_A%>
+<%=seats.sleeper%>
+</h3> -->
+<!-- 
+<h6>
+
+<%=f_class%>
+
+<%=s_class%>
+
+<%=t_class%>
+
+<%=sleeper%>
+<h6> -->
+
+
+
+
+
+<!-- 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+
+
+
+
+
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+</body>
+</html>
+</body></html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booked Ticket</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<style>
+  body {
+  background-color: #000;
+}
+
+.landing-header {
+  z-index: 1000;
+  position: relative;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+/*#landing-header h1 {
+  color: #fff;
+}*/
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260) 
+}
+/*http://i.imgur.com/K3mPv14.jpg*/
+.slideshow li:nth-child(2) { 
+  background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  animation-delay: 10s; 
+}/*http://i.imgur.com/SBEmFpv.jpg*/
+.slideshow li:nth-child(3) { 
+  background-image: url(https://images.pexels.com/photos/251603/pexels-photo-251603.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  animation-delay: 20s; 
+}/*http://i.imgur.com/emvhOnb.jpg*/
+.slideshow li:nth-child(4) { 
+  background-image: url(https://images.pexels.com/photos/696644/pexels-photo-696644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  animation-delay: 30s; 
+}/*http://i.imgur.com/2LSMCmJ.jpg*/
+.slideshow li:nth-child(5) { 
+  background-image: url(https://images.pexels.com/photos/673648/pexels-photo-673648.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  animation-delay: 40s; 
+}/*http://i.imgur.com/TVGe0Ef.jpg*/
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - class added by modernizr */
+.no-cssanimations .slideshow li {
+  opacity: 1;
+}
+</style>
+
+
+
+
+
+
+
+</head>
+
+<body><!-- <div class="landing-header"> -->
+
+
+
+  <nav  style ="margin-top:1px;padding-top:0px;background-color:darkcyan;" class="landing-header navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-demo1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a href="###" style="color:gold" class="navbar-brand"><i style="color:red" class="fab fa-battle-net"></i> Ticket</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-demo1">
+  
+  <div class ="nav navbar-nav">
+    
+    <li><a style="color:black" href="/"><i class="fas fa-home"></i> Home</a></li>
+    <li><a style="color:magenta" href="/helpline"><i class="fa fa-phone" aria-hidden="true"></i>
+ Helpline</a></li>
+    
+  </div>
+  <div class ="nav navbar-nav navbar-right">
+    <!----<li><button  class="btn btn-success">Login</button></li>----->
+    <!-- <li><a href="/register"><i class="fas fa-user-plus"></i> Signup</a></li> -->
+    <li><a style="color:lime" href="/login"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    
+  </div>
+    </div>
+
+  </nav>
+  <div class="landing-header">
+
+
+
+
+<h1 style="text-align: center;color:blue;">Booked Ticket Details</h1>
+
+
+
+<br>
+
+  <div><div></div>
+    
+    <span style="float:right;margin-right:600px">
+         <span style="font-family: Charcoal">PNR No:</span><span style="font-family:Helvetica"> <%=pnr%></span>
+    </span>
+
+
+  </div>
+
+<br><br>
+
+  <div>
+    <span  style="margin-left:45px">
+          <span style="font-family: Charcoal">Train name:</span><span  style="font-family:Helvetica">  <%=td.t_name%></span>
+    </span>
+       <span style="float:right;margin-right:450px"> 
+        <span style="font-family: Charcoal">Train No:</span><span style="font-family:Helvetica"> <%=td.t_number%></span>
+      </span>
+
+  </div>
+
+<hr>
+
+  <div>
+    <span style="margin-left:40px">
+        <span style="font-family: Charcoal">Time Of Arrival:</span><span style="font-family:Helvetica">  <%=td.start_time%></span>
+    </span>
+<span style="float:right;margin-right:390px">
+      <span style="font-family: Charcoal">Journey Timespan:</span><span style="font-family:Helvetica"> <%=td.jour_time%> </span>
+</span>
+
+  </div>
+<hr>
+
+  <div>
+    <span style="margin-left:40px">
+        <span style="font-family: Charcoal">Source:</span><span style="font-family:Helvetica"> <%=td.src%></span>
+    </span>
+    <span style="float:right;margin-right:470px">
+        <span style="font-family: Charcoal">Destination</span><span style="font-family:Helvetica"> <%=td.dst%></span>
+    </span>
+  </div>
+
+<hr>
+
+  <div>
+    <span style="margin-left:48px">
+        <span style="font-family: Charcoal">Class:</span><span>  <%= td.classs%></span>
+    </span>
+    <span style="float:right;margin-right:490px">
+          <span style="font-family: Charcoal">Price:</span><span style="font-family:Helvetica"><i class="fa fa-inr" style="display: inline-block;font-size:25px;color:black"></i> <%=price%></span>
+  </span>
+
+  </div>
+
+
+<hr>
+
+
+
+  <div>
+    <span style="margin-leftpx">
+
+        <span style="font-family: Charcoal">Ticket-Ref Id:</span><span style="font-family:Helvetica"> <%=td.id_rail%></span>
+      
+    </span>
+    <span style="float:right;margin-right:400px">
+
+        <span style="font-family: Charcoal">Booking Date:</span><span style="font-family:Helvetica"> <%=td.start_time%></span>
+      
+    </span>
+  </div>
+
+  <hr>
+
+  <br>
+
+  <br>
+
+
+
+
+  <h3 style="text-align: center;color:gold;">Passenger Details:<h3>
+
+
+    <hr>
+    <div>
+<div class="container" >
+<table  class="table table-dark table-hover">
+  <!-- class="table table-hover table-dark" -->
+  <thead>
+    <tr style="background:orangered;padding-left: 64px">
+                      <th>SL No.</th>
+      <th style="background:orangered;padding-left: 64px">Name</th>
+                              <th style="background:orangered;padding-left: 64px">Age</th>
+      <th style="background:orangered;padding-left: 64px">Sex</th>
+                                
+    </tr>
+    
+  </thead><tbody>
+
+
+  <tr ><!-- style="background:darkred" -->
+      <th style="color:black" scope="row">1.</th>
+      <td style="color:black"><%=passenger.name%></td>
+      <td style="color:black"><%=passenger.age%></td>
+      <td style="color:black"><%=passenger.sex%></td>
+  
+    </tr></tbody></table></div></div>
+
+
+
+
+
+
+
+<br>
+<hr>
+<br>
+    <div>
+<div class="container" >
+<table  class="table table-dark table-hover">
+  <!-- class="table table-hover table-dark" -->
+  <thead>
+    
+                                <th style="background:olive;padding-left: 84px">Email</th>
+      <th style="background:olive;padding-left: 64px">Contact No</th>
+                              <th style="background:olive;padding-left: 64px">Booking Status</th>
+    </tr>
+    
+  </thead><tbody>
+
+
+  <tr ><!-- style="background:darkred" -->
+      <td style="color:black"><%=passenger.email%></td>
+      <td style="color:black"> <%=passenger.phone%></td>
+     
+      
+    </tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+     <form action="/ticket/cancel/<%=pnr%>" method="POST">
+
+                              <div>
+
+
+                                <span >  <button  type="button"  class="btn btn-warning btn-lg">Print Ticket</button>
+
+                                    <span ><a  href="/ticket/cancel/<%=pnr%>" class="btn btn-info btn-lg"  download><i class="fas fa-download"></i>Download</a></span>
+
+                                <span ><button   type="submit" class="btn btn-danger btn-lg" ><span class="glyphicon glyphicon-cancel" aria-hidden="true"></span> CANCEL TICKET</button></span></div>
+                            </form>
+
+
+
+
+
+<!-- 
+<h4>              
+                          rail_id  <%=td.id_rail%><br>
+
+                   src <%=td.src%>
+                   <br>
+                    dst <%=td.dst%>
+                    <br>
+                   trin no : <%=td.t_number%>
+                   <br>
+                   tr name: <%=td.t_name%>
+                   <br>
+                   jour tym: <%=td.jour_time%>
+                   <br>
+                    start tym : <%=td.start_time%>
+                    <br>
+                    date: <%=td.date%>
+                    <br>
+                   clas : <%= td.classs%>
+                   <br>
+                   price:<%=price%>
+                   <br>
+
+
+
+                  p_name:  <%=passenger.name%>
+                  <br>
+                        p age :<%=passenger.age%>
+                        <br>
+                        p sex: <%=passenger.sex%>
+                        <br>
+                        p : email <%=passenger.email%>
+                        <br>
+                       p:contact no: <%=passenger.phone%>
+                       <br>
+                     
+               pnr: <%=pnr%>
+
+                            </h4>
+
+
+ -->
+
+</div>
+
+<ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  
+
+</body>
+</html>
+
+                         

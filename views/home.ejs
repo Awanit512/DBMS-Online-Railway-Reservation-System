@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Railway Reservation</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+  <style >
+
+        /*@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}*/
+/*.hvr-pulse {
+  display: inline-block;
+  vertical-align:middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+body{
+  background-image: url(https://images.pexels.com/photos/1191710/pexels-photo-1191710.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+}
+
+
+
+    .sss{
+      background:black;
+      color:white;
+    }
+
+    .ggg{
+      /*background:bisque;*/
+       background:black;
+      color:white;
+    }
+
+   #abc{
+  padding-top: 3px;  
+  padding-bottom: 3px; 
+  background-color:  rgb(107, 107, 71);
+
+}
+
+#abcd{
+      }
+
+#title{
+  text-align: center;
+  font-style: bold;
+  color: white;
+
+  
+}
+
+.container{
+  color: rgb(153, 51, 1);
+}
+
+
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   
+}
+
+
+  </style>
+<script>
+
+
+$(document).ready(function(){
+
+
+
+
+
+  $("#changing").click(function(){
+  var value = $('#exampleInputfrom :selected').text();
+  var val = $('#exampleInputto :selected').text();
+  $('#exampleInputfrom').val(val);
+  $('#exampleInputto').val(value);
+
+
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+  $("#search_train").click(function(){
+    $("#pnr12").hide();
+    $('.ss').addClass("sss");
+    $('.gg').removeClass("ggg");
+
+    $("#train12").show();
+
+  });
+  $("#pnr_status").click(function(){
+      $("#pnr12").show();
+       $('.gg').addClass("ggg");
+    $('.ss').removeClass("sss");
+    $("#train12").hide();
+  });
+});
+</script>
+	
+	
+</head>
+<body >
+
+
+<!--                                 NavBar cOmpleteed                                    --------------------->
+
+	<nav class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-demo1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a href="###" class="navbar-brand"><i style="color:orange" class="fab fa-battle-net"></i>AwaViv512</a>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-demo1">
+	
+	<div class ="nav navbar-nav">
+		
+		<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+		<li><a href="/helpline"><i class="fa fa-phone" aria-hidden="true"></i>
+ Helpline</a></li>
+		
+	</div>
+	<div class ="nav navbar-nav navbar-right">
+		<!----<li><button  class="btn btn-success">Login</button></li>----->
+		<li><a href="/register"><i class="fas fa-user-plus"></i> Signup</a></li>
+		<li><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+    <li><a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+  
+	</div>
+    </div>
+
+	</nav>
+
+
+
+
+<div class="jumbotron jumbotron-fluid" id="abc" >
+
+	<div class="container" id="title"  ><!-- style="background:blue" -->
+   	<h1><i class="fa fa-train"></i>  Book Train Ticket</h1>
+   	
+   </div></div>
+
+
+  <div class="container landing-header">
+    
+      <button style="border-radius:24px;color:palevioletred;margin-left:400px" id="search_train" class="button button--default button--bold ss" tabindex="5">Search Train Status</button>
+      <button style="border-radius:24px;color:palevioletred;margin-left:30px" id="pnr_status"  class="button button--default button--bold gg" tabindex="5">Check PNR Status</button>
+   </div>
+  <br>
+
+<div  id="train12" class="container landing-header" >
+	<div class="jumbotron jumbotron-fluid" id="abcd">
+  
+<form action="/train/show" method="POST" >
+
+  <div class="form-group">
+    <label style="width: 40%;margin-left:250px;" for="exampleInputfrom">FROM :</label>
+
+    <select style="width: 40%; padding: 3px 2px;margin-left:250px;" class="form-control"  id="exampleInputfrom" name="train[source]" >
+      <option value="DELHI">DELHI</option>
+      <option value="MUMBAI">MUMBAI</option>
+      <option value="CHENNAI">CHENNAI</option>
+      <option value="PATNA">PATNA</option>
+      <option value="BANGALORE">BANGALORE</option>
+      <option value="MANGALORE">MANGALORE</option>
+      <option value="NAGPUR">NAGPUR</option>
+      <option value="KOLKATA">KOLKATA</option>
+    </select>
+    </div>
+<!-- ///////////////////22222222222222222222222222222222222222222222222222222222222222222222 -->
+    <!-- <span id="exchange"><i class="fa fa-refresh" style="font-size:48px;color:red"></i></span>
+ -->
+
+   <div >
+    
+      <button id="changing" type="button" style="padding:6px 10px;margin-left:420px;border-radius:50%;border-color:black"  class="button button--default button--bold " tabindex="2"><i style="transform:rotate(90deg);color:red" class="fa fa-exchange" style="font-size:28px;color:red"></i></button>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  <div class="form-group" >
+    <label  style="width: 40%;margin-left:250px;" for="exampleInputto">To :</label>
+
+    <select  style="width: 40%;padding: 3px 2px;margin-left:250px;" class="form-control"  id="exampleInputto" name="train[destination]"  >
+    <option  value="DELHI">DELHI</option>
+      <option value="MUMBAI">MUMBAI</option>
+      <option value="CHENNAI">CHENNAI</option>
+      <option value="PATNA">PATNA</option>
+      <option value="BANGALORE">BANGALORE</option>
+      <option value="MANGALORE">MANGALORE</option>
+      <option value="NAGPUR">NAGPUR</option>
+      <option value="KOLKATA">KOLKATA</option>
+    </select>
+  </div>
+    <br>
+  <div class="form-group">
+    <label style="width: 40%;margin-left:250px;" for="example"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Date</label>
+    <input style="width: 40%;padding: 3px 2px;margin-left:250px;" type="Date" class="form-control" id="example" name="train[date]" >
+  </div>
+  
+<!-- //class -->
+<!-- 
+  <div class="form-group">
+    <label for="exampleInputto">Class</label>
+  <select  class="form-control" id="exampleInputto" name="train[class]" >
+      <option value="1AC">1 AC</option>
+      <option value="2AC">2 AC</option>
+      <option value="3AC">3 AC</option>
+      <option value="Sleeper">Sleeper</option>
+
+    </select> -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- <label>sirname :
+<input type="text" placeholder="kuch bhi" name="sirname">
+</label> -->
+
+
+
+
+
+
+
+  <div><button style="margin-left:340px;"  class="btn btn-success btn-lg" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> SEARCH TRAIN</button></div>
+</form>
+
+
+
+</div>
+
+</div>
+</div>
+
+<!-- 
+///////////////////////////////////////////////////////////////// -->
+
+
+
+<div  id="pnr12" class="container" style="display:none">
+ <div class="jumbotron jumbotron-fluid" id="abcd">    
+
+<form  action="/ticket_info/pnr" method="POST">
+
+  <div class="form-group">
+    <label for="example1"><h4 ><i class="fas fa-train"></i> Check PNR Status</h4></label>
+    <input type="text" style="padding: 3px 2px;" class="form-control" id="example1" name="pnr" placeholder="Enter PNR" maxlength="50">
+</div>
+    <div><button  class="btn btn-warning btn-lg" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> SEARCH</button></div>
+  </form></div>
+
+
+</div>
+
+
+
+<hr>
+
+
+      
+<div class="row" style="display:inline">
+  <div class="col-sm-4 col-md-3" style="display:inline">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1560365627-a1f5fb609bd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="hiii">
+      <div class="caption">
+        <h3><i style="margin-left:43%" class="fas fa-anchor"></i></h3>
+        <p style="display:none">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><a style="margin-left:30%" href="#" class="btn btn-primary" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-md-3" style="display:inline">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1556879956-7e8a5ef1926f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="hiii">
+      <div class="caption">
+        <h3><i style="margin-left:40%" class="fab fa-airbnb"></i></h3>
+        <p style="display:none">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><a style="margin-left:30%" href="#" class="btn btn-warning" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-md-3" style="display:inline">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1560635505-fdf5271d1c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="hiii">
+      <div class="caption">
+        <h3><i style="margin-left:43%" class="fab fa-acquisitions-incorporated"></i></h3>
+        <p style="display:none">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><a style="margin-left:30%" href="#" class="btn btn-success" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-md-3" style="display:inline">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1529581887337-bdb71d4c228a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="hiii">
+      <div class="caption" style="dispal=lay:center">
+        <h3><i style="margin-left:43%" class="fab fa-affiliatetheme"></i></h3>
+        <p style="display:none">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p ><a style="margin-left:30%" href="#" class="btn btn-danger" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+
+
+</div>
+<button type="button" onclick="my Function()" id="exchange156">Try it<i class="fa fa-refresh" style="font-size:48px;color:red"></i></button> -->
+
+
+
+<!--  <script>
+
+function myFunction() {
+  document.getElementByTagName("body").style.color="black"
+//   document.getElementById("exampleInputfrom").style.color="red"
+//   var f = document.getElementById("exampleInputfrom").text ;
+// document.getElementById("exampleInputfrom").value ="AWANIT"
+// // document.getElementById("exampleInputfrom").value = document.getElementById("exampleInputto").value;
+// // 
+// document.getElementById("exampleInputto").value=f;
+
+}
+</script> -->
+
+
+
+<!-- $('#exchange').click(function(){
+  var src = $("#exampleInputfrom option:selected").text();
+var dest = $("#exampleInputto option:selected").text();
+$("#exampleInputfrom option:selected").value(dest);
+ $("#exampleInputto option:selected").value(src);
+
+ -->
+
+<!-- 
+<div class="footer">
+<div class="bottom_brdr"><div class="dark_clr"></div><div class="light_clr"></div></div>
+<div class="footer_inr">
+<div class="ftr_col_1">
+    <div class="ftr_ttl"> Our Products </div>
+    <ul>
+    <li><a href="https://www.easemytrip.com/flights.html">Book Flights</a></li>
+    <li><a href="https://www.easemytrip.com/flight-status">Flight Status</a></li>
+    <li><a href="https://www.easemytrip.com/hotels/">Hotel Booking</a></li>
+  <li><a href="https://www.easemytrip.com/railways/">Trains</a></li>
+    <li><a href="//www.easemytrip.com/airfare-calender">Lowest Airfare Calendar</a></li>
+    <li><a href="//www.easemytrip.com/domestic-flights.html">Domestic Flights</a></li>
+    <li><a href="//www.easemytrip.com/international-flights.html">International Flights</a></li>
+    <li><a href="https://www.easemytrip.com/holiday-packages.html">Holiday Packages</a></li>
+    <li><a href="https://www.easemytrip.com/visa/index">Visa</a></li>
+    <li><a href="https://www.easemytrip.com/bus/">Bus</a></li>
+  <li><a href="https://www.easemytrip.com/cabs">Cabs</a></li>
+    <li><a href="//www.easemytrip.com/franchise/index.html">Franchise</a></li>
+  <li><a href="https://www.easemytrip.com/mice/index.html" target="_new"><span>Mice</span></a>
+
+  </li>
+    </ul>
+</div>
+<div class="ftr_col_1">
+    <div class="ftr_ttl"> EMT Info </div>
+    <ul>
+    <li><a href="//www.easemytrip.com/privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="//www.easemytrip.com/terms.html">Terms &amp; Conditions</a></li>
+    <li><a href="//www.easemytrip.com/user-agreement.html">User Agreement</a></li>
+<li><a href="//www.easemytrip.com/investor-relations.html">Investors Relation</a></li>
+    <li><a href="//www.easemytrip.com/mobile-app.html">Mobile App</a></li>
+    <li><a href="//www.easemytrip.com/achievements/index.html">Achievements</a></li>
+    <li><a href="//www.easemytrip.com/career.html">Career</a></li>
+    <li><a href="//www.easemytrip.com/about-us.html">About Us</a></li>
+    <li><a href="//www.easemytrip.com/contact-us.html">Contact Us</a></li>
+    </ul>
+</div>
+<div class="ftr_col_1">
+    <div class="ftr_ttl">  SITE DIRECTORY  </div>
+    <ul>
+    <li><a href="//www.easemytrip.com/directory/flights.html">Flight by City</a></li>
+    <li><a href="//www.easemytrip.com/directory/packages.html">Holidays</a></li>
+    <li><a href="//www.easemytrip.com/directory/airlines.html">Airlines</a></li>
+  <li><a href="//www.easemytrip.com/airports/airports-in-india.html">Airports</a></li>
+    <li><a href="//www.easemytrip.com/directory/domestic-flight-schedule.html">Flight Schedule</a></li>
+  <li><a href="https://www.easemytrip.com/directory/train-routes.html">Train Routes</a></li>
+<li><a href="https://www.easemytrip.com/directory/bus-routes.html">Bus Routes</a></li>
+<li><a href="https://www.easemytrip.com/directory/hotels-in-india.html">Hotel Directory</a></li>
+    <li><a href="//www.easemytrip.com/travel-guides.html">Travel Guides</a></li>
+    <li><a href="https://www.easemytrip.com/blog/">Blog</a></li>
+    <li><a href="//www.easemytrip.com/travel-updates.html">Travel Updates</a></li>
+    <li><a href="//www.easemytrip.com/sitemap.html">Sitemap</a></li>
+   
+    </ul>
+</div>
+<div class="ftr_col_1">
+    <div class="ftr_ttl">  AIRLINE OFFERS </div>
+    <ul>
+    <li><a href="//www.easemytrip.com/offers/airindia.html">Air India</a></li>
+    <li><a href="//www.easemytrip.com/offers/jetkonnect.html">JetKonnect</a></li>
+    <li><a href="//www.easemytrip.com/offers/goair.html">Go Air</a></li>
+    <li><a href="//www.easemytrip.com/offers/indigo.html">Indigo</a></li>
+    <li><a href="//www.easemytrip.com/offers/spicejet.html">Spicejet</a></li>
+    <li><a href="//www.easemytrip.com/offers/vistara.html">Vistara</a></li>
+    </ul>
+</div>
+<div class="ftr_col_2">
+<div class="ftr_col_inr">
+<div class="ftr_ttl">Payment mode </div>
+<div class="cards"><a class="visa" title="Visa" href=""></a><a class="master" title="Master Card" href=""></a><a class="american" title="American Express" href=""></a>
+<a class="py_pal" title="PayPal" href=""></a><a class="rupaylg" title="RuPay" href=""></a>
+</div>
+<div class="ftr_ttl">Follow us on </div>
+<div class="social"><a href="https://www.facebook.com/EaseMyTrip/" target="_new" title="Facebook" class="fb_b"><span class="fb_n"></span></a>
+<a href="https://twitter.com/easemytrip" title="Twitter" target="_new" class="tw_b"><span class="tw_n"></span></a>
+<a href="https://www.youtube.com/c/EaseMyTripOfficial" title="You Tube" target="_new" class="yt_b"><span class="yt_n"></span></a>
+<a href="https://www.linkedin.com/company/easemytrip-com" title="LinkedIn" target="_new" class="li_b"><span class="li_n"></span></a>
+<a href="https://www.instagram.com/easemytrip/" title="Instagram" target="_new" class="in_b"><span class="in_n"></span></a>
+</div>
+</div>
+</div>
+<div class="ftr_col_3">
+<div class="ap_d_cn"><span>Download</span> EaseMyTrip App </div>
+<a href="//play.google.com/store/apps/details?id=com.easemytrip.android" class="pl_store hvr-wobble-horizontal" title="Google Play Store"></a>
+<a href="https://itunes.apple.com/in/app/easemytrip-flight-booking/id1053030595?mt=8" class="app_store hvr-wobble-horizontal" title="App Store"></a>
+</div>
+</div>
+<div class="clr"></div>
+<div class="brdr_1"></div>
+<div class="footer_inr">
+<div class="ftr_col_4">Copyright © 2020 EaseMyTrip</div>
+<div class="ftr_col_5">
+<ul>
+<li><img src="https://www.easemytrip.com/img/footer-btm-sprite.png" alt="EaseMyTrip"></li>
+</ul>
+</div>
+</div>
+</div>
+
+ -->
+ <hr>
+<div class="container">
+  <div class="jumbotron">
+        <span  ><h4 style="text-align:center"><strong>FAQs</strong></h4></span><br>
+        <div >
+  <div >
+    <h3>
+    <i></i>
+    <span  style="color:black"> Q) How can I Book Train Tickets Online?</span>
+    </h3>
+  </div>
+  <div class="toggle-inner" >
+    <p style="font-size:20px">
+      A: To book train tickets online, log on to the awaviv512 website and click on the train tab. Search trains for your preferred route and date and then check availability. If your tickets are available, you can proceed to next step. If there is waiting list, you can still go for booking your train tickets. Once you click on continue option, you will be asked to verify your IRCTC id to continue booking online train tickets. Now, you can enter the passenger details and proceed to book.
+        </p>
+  </div>
+  </div>
+    
+<div >
+  <div >
+    <h3>
+    <i></i>
+    <span style="color:black">Q) How can I Book Train Tickets in Tatkal Quota?</span>
+    </h3>
+  </div>
+  <div >
+  
+      <p  style="font-size:20px"> A: Tatkal ticket reservation is a facility that allows the passengers taking a train journey on a short notice. Tatkal quota opens one day advance excluding the date of journey from the originating station of the train.</p>
+<p>Tatkal Train Ticket Booking Timings are:</p>
+<p>AC Class - 10:15 AM</p>
+<p>Sleeper Class - 11:15 AM</p>
+<p>You have to opt for Tatkal quota to book tatkal tickets. </p>
+
+  </div>
+  </div>
+    
+<div class="toggle">
+  <div class="toggle-title">
+    <h3>
+    <i></i>
+    <span style="color:black">Q) What are the RAC, GNWL, PQWL, RLWL and TQWL in Railway Reservation?</span>
+    </h3>
+  </div>
+  <div class="toggle-inner">
+    <p style="font-size:20px"> A: All of the above except RAC are the types of waiting list available with train booking. WL with a number suggests the waitlisted status of a passenger.<strong></strong></p>
+<p><strong>RAC</strong> means Reservation against Cancellation. If you have an RAC ticket, then your travel with a train is guaranteed but you will be given a seat (half of a side lower berth mostly) to sit and travel not an entire berth.</p>
+<p><strong>GNWL</strong> General Waiting List waitlisted tickets are issued to the passenger who begins his/her journey from the originating station of a route or stations closer to the originating station.</p>
+<p><strong>PQWL</strong> Pooled Quota Waiting List is shared by several small stations of a train route. The quota generally operates from originating station of a train route and only one Pooled Quota is there for entire run. The Pooled Quota is usually selected for the passengers travelling from the originating station to one or few stations short of the terminating station, or from a midway station to the terminating station, or between two stations coming midway of the entire route.</p>
+<p><strong>RLWL </strong>Remote Location Waiting List ticket is issued for the stations between the originating and terminating stations. Usually these are important towns or cities of that particular route. These tickets are given a separate priority and their confirmations will depend on the cancellations of a confirmed ticket. Remote location stations prepare their own chart 2-3 hours prior to the actual departure of train. There are less chances of confirmation for such waitlisted tickets.</p>
+<p><strong>TQWL </strong>Tatkal Quota Waiting List was earlier CKWL. It is the waiting list tickets booked under Tatkal Quota. TQWL tickets directly get confirm and don’t go through RAC. However, GNWL is given priority over TQWL.</p>
+  </div>
+  </div>
+    
+<div class="toggle">
+  <div class="toggle-title">
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) What is Premium Tatkal?</span>
+    </h3>
+  </div>
+  <div class="toggle-inner">
+    <p>
+      </p><p style="font-size:20px"> A: Premium Tatkal is a new quota introduced by railway to book online train tickets. Under this quota, dynamic fares are applicable. Premium Tatkal fare increases following the number of bookings. Booking Premium Tatkal (PT) ticket is much costlier than Tatkal because of the dynamic fare pricing. In this case, train ticket prices depend on the booking rates and availability of seats.</p>
+        <p></p>
+  </div>
+  </div>
+    
+<div class="toggle">
+  <div class="toggle-title">
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) How can I Cancel Tatkal Tickets?</span>
+    </h3>
+  </div>
+  <div class="toggle-inner">
+    <p style="font-size:20px">A:
+      On cancellation of confirmed Tatkal tickets, no refund is given. On the cancellation of contingent and waitlisted Tatkal tickets, amount will be charged as per the existing rules of Railway. However, you can partially cancel the Tatkal e-tickets.
+        </p>
+  </div>
+  </div>
+    
+    <div >
+  <div >
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) What are the Cancellation Charges for Train Tickets?</span>
+    </h3>
+  </div>
+  <div >
+    <p style="font-size:20px"> A: To get refunds on cancellation of train tickets, passengers should cancel their tickets before chart preparation. If a confirmed train ticket is cancelled more than 48 hrs prior to the scheduled departure of the train, cancellation charges will be Rs.240/- for AC First Class/Executive Class, Rs.200/- for AC 2 Tier/First Class, Rs. 180 for AC 3 Tier/AC Chair car/ AC 3 Economy, Rs.120/- for Sleeper Class and Rs.60/- for Second Class. These cancellation charges are applicable per ticket per passenger and same will be deducted before processing the refunds. If a confirmed ticket is cancelled between 48 and 12 hours prior to the scheduled departure of the train, cancellation charges will be 25% of the fare (subject to the above mentioned minimum flat rate). Between 12 hours and 4 hours prior to the scheduled departure of the train up to chart preparation (whichever is earlier), 50% of the fare paid subject to the minimum cancellation charges.</p>
+  </div>
+  </div>
+    <div >
+  <div >
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) How Many Days in Advance you can Book Train Tickets?</span>
+    </h3>
+  </div>
+  <div >
+    <p style="font-size:20px"> A: Advance Reservation Period for booking train tickets is 120 days (excluding the date of journey). So, booking in trains from train originating stations will open and remain available for 120 days.</p>
+        
+        </div>
+  </div>
+    <div >
+  <div >
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) When the Chart of a Train is Prepared?  </span>
+    </h3>
+  </div>
+  <div >
+<p style="font-size:20px"> A: The first chart of a train is typically prepared 4 hours ahead of its departure from originating station or remote location station. Chart of early morning trains is prepared the night before. However, if some seats still remain available, they can be booked by the passengers. So, the final chart is created 30 minutes before departure of train.</p>
+  </div>
+  </div>
+    <div >
+  <div >
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) Can I Change My Train Booking?</span>
+    </h3>
+  </div>
+  <div >
+    <p style="font-size:20px"> A: You can’t change your train booking. All that you can do is to cancel your current ticket and book again.</p>
+        </div>
+  </div>
+      <div >
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) How to Order Food in Train?</span>
+    </>  
+<p style="font-size:20px"> A: There are several websites and apps that offer food delivery services in train. You can order food in trains using your mobile phone and food will be delivered at your berth. With little efforts, modern day travelers can enjoy the best meals during their train journeys. Food is delivered from reputed restaurants in the locality and multiple payment options are available for the same.</p>
+
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) What is the Concession for Senior Citizens Quota?</span>
+    </>
+    <p style="font-size:20px"> A: Indian railway gives the facility to senior citizens for booking train tickets under senior citizen quota by availing a concession. As per the rules, male senior citizens of 60 years and above and lady senior citizens of 58 years and above can avail the concession in the fares of all classes of Mail/Express/Rajdhani/Shatabdi/Jan-Shatabdi/Duronto group of trains. The concession amount for men is 40% and for women is 50%.</p>
+ 
+  <div >
+    <h3>
+    <i></i>
+    <span style="color:black"> Q) What is Ladies Quota in Trains?</span>
+    </h3>
+  </div>
+  <div >
+  <p style="font-size:20px"> A: This quota is only for lady travelers or accompanying male child below 12 years. Ladies quota is available in sleeper class and second sitting class.</p>
+  </div>
+  </div>
+    
+    
+    
+  </div>
+   
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a id="toTop" class="hvr-pulse" href="#">
+<div style="width:50px;height:50px; padding: 10px 12px;float:right; margin-left:1150px;margin-bottom:20px;background: linear-gradient(to right,#2F80ED,#56CCF2); border-radius:50%;"><i class='fas fa-angle-double-up' style='font-size:30px;color:#fff'></i></div>
+</a>
+<script>
+
+    // When the document is loaded...
+      $(document).ready(function()
+    {
+
+      // Hide the toTop button when the page loads.
+      $("#toTop").css("display", "none");
+
+      // This function runs every time the user scrolls the page.
+      $(window).scroll(function(){
+
+        // Check weather the user has scrolled down (if "scrollTop()"" is more than 0)
+        if($(window).scrollTop() > 0){
+
+          // If it's more than or equal to 0, show the toTop button.
+          console.log("is more");
+          $("#toTop").fadeIn("slow");
+        }
+        else {
+          // If it's less than 0 (at the top), hide the toTop button.
+          console.log("is less");
+          $("#toTop").fadeOut("slow");
+
+        }
+      });
+
+      // When the user clicks the toTop button, we want the page to scroll to the top.
+      $("#toTop").click(function(){
+
+        // Disable the default behaviour when a user clicks an empty anchor link.
+        // (The page jumps to the top instead of // animating)
+        event.preventDefault();
+
+        // Animate the scrolling motion.
+        $("html, body").animate({
+          scrollTop:0
+        },"slow");
+
+      });
+
+    });
+    </script>
+
+  <!-- <div class="jumbotron">
+    <h1></h1>      
+    <p></p>
+  </div>      
+ -->
+
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+  
+</body>
+</html>

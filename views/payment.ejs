@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" type="text/css" href="/views/Railway.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	
+/* The container */
+.containerr {
+  display: inline;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containerr input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.containerr:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containerr input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containerr input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containerr .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+body{
+	background:url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+	background-repeat: no-repeat;
+	background-size:cover;
+
+}
+
+</style>
+<script>
+$(document).ready(function(){
+  $("#visa_cc").click(function(){
+      
+    $("#mm").hide();
+     $("#cc").hide();
+      $("#amazon").hide();
+    $("#visa").fadeIn(3000);
+  });
+  });
+
+$(document).ready(function(){
+  $("#master_card").click(function(){
+      
+    $("#cc").hide();
+     $("#amazon").hide();
+      $("#visa").hide(); 
+    $("#mm").fadeIn(2000);
+     });
+  });
+
+$(document).ready(function(){
+  $("#ap").click(function(){
+    
+    $("#visa").hide();
+     $("#mm").hide();
+      $("#cc").hide();
+      $("#amazon").fadeIn(2000);
+   });
+  });
+
+$(document).ready(function(){
+  $("#credit_card").click(function(){
+      
+    $("#amazon").hide();
+     $("#mm").hide();
+      $("#visa").hide();
+    $("#cc").fadeIn(2000);
+  });
+  });
+</script>
+
+	
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-demo1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a href="###" style="color:white" class="navbar-brand"><i style="color:orange" class="fab fa-battle-net"></i>AwaViv512</a>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-demo1">
+	
+	<div class ="nav navbar-nav">
+		
+		<li><a style="color:white" href="/"><i class="fas fa-home"></i> Home</a></li>
+		<li><a style="color:white" href="/helpline"> <i class="fa fa-phone" aria-hidden="true"></i>
+Helpline</a></li>
+		
+	</div>
+	<div class ="nav navbar-nav navbar-right">
+		<!----<li><button  class="btn btn-success">Login</button></li>----->
+	<!-- 	<li><a href="/register"><i class="fas fa-user-plus"></i> Signup</a></li> -->
+		<li><a style="color:white" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+		
+	</div>
+    </div>
+
+	</nav>
+
+
+
+<div class="jumbotron" id="abc" style="background-color:darkkhaki;" >
+
+	<div style="text-align:center;" class="container" id="title"  ><!-- style="background:blue" -->
+   	<h2 style="text-align:center;font-size:2vw;font-weight:bold;"><i class='fas fa-bullhorn' style='font-size:40px;color:olivedrab;'></i> WELCOME TO PAYMENT GATEWAY</h2>
+   	
+   </div></div>
+
+<hr>
+   <div style="margin-left:80px;">
+	<span id="choose"><h4 style="font-weight:bold;">Choose Mode of payement:</h4></span>
+	<span style="display:inline">
+   <label class="containerr" >
+	<input id="ap" type="radio" name="mode" value="amazon-pay"><i class="fab fa-cc-amazon-pay" style="font-size:40px;color:red"></i>
+	 <span class="checkmark"></span></label>
+	</span>
+
+	<span style="display:inline">
+		<label class="containerr" >
+	<input id="visa_cc"  type="radio" name="mode" value="visacard"><i class="fab fa-cc-visa" style="font-size:40px;color:orange"></i>
+	 <span class="checkmark"></span></label>
+	</span>
+
+	<span style="display:inline"><label class="containerr" >
+<input id="master_card" type="radio"  name="mode"  value="mastercard"><i class="fab fa-cc-mastercard" style="font-size:40px;color:pink"></i>
+ <span class="checkmark"></span></label>
+	</span>
+
+	<span style="display:inline"><label class="containerr" >
+<input id="credit_card" type="radio" name="mode" value="creditcard"><i class="fas fa-credit-card" style="font-size:40px;color:orange"></i>
+ <span class="checkmark"></span></label>
+	</span></div>
+	
+
+
+<h5>
+<!-- 
+<%=feed.date%>
+<%=feed.source%>
+<%=feed.classs%>
+<%=feed.destination%>
+<%=feed.train_id%>
+<%=feed.price%>
+<%=feed.person.name%>
+<%=feed.person.age%>
+<%=feed.person.sex%>
+ -->
+
+	</h5>
+<!-- <br> -->
+<hr>
+
+	<form  id="visa" action="/ticket/<%=feed.train_id%>" method="POST" style="display:block;margin-left:80px;">
+		<div  class="container">
+<div ><div>
+ 	<label for="cardd">Debit Card number :
+		<input id="cardd" type="text" placeholder="Debit card number" required>
+	</label></div>
+<br>
+		<div><label for="cvv"><i class="fas fa-key"></i> CVV:
+		<input style="margin-left:80px;" id="cvv" type="number" placeholder="cvv" required>
+	</label></div>
+		<br>
+		<div><label for="nam">Name on card:
+		<input style="margin-left:35px;" id="nam" type="text" placeholder="name on card" required>
+	</label></div>
+<br>
+<div>  <label>Month of Exp:<select style="margin-left:45px;">
+		<option>JAN</option>
+		<option>FEB</option>
+		<option>MARCH</option>
+		<option>APRIL</option>
+		<option>MAY</option>
+		<option>JUNE</option>
+		<option>JULY</option>
+		<option>AUG</option>
+		<option>SEPT</option>
+		<option>OCT</option>
+		<option>NOV</option>
+		<option>DEC</option>
+		<select> 
+	</label>
+</div> 
+<br>
+
+	  <div> 
+ <label>Year of Exp:<select style="margin-left:54px;">
+ 	<%for(var i=2020;i<2035;i++){%>
+		<option><%=i%></option>
+		<%}%>
+		<select> 
+	</label>
+	  </div>
+<br>
+	<div>
+		<button type="submit" style="width:100px;font-size:24px;color:red;background:black;border:solid;border-color:turquoise;border-radius:6px">Pay</button>
+	</div>
+
+<br><br>
+			<div style="display:none;"><input type="text" name="person[sex]" value="<%=feed.person.sex%>"></div>
+				<div style="display:none;" ><input type="text" name="person[name]" value="<%=feed.person.name%>"></div>
+					<div style="display:none;"><input type="text" name="classs" value="<%=feed.classs%>"></div>
+							<div style="display:none;" ><input type="number" name="person[age]" value="<%=feed.person.age%>"></div>
+								<div style="display:none;" ><input type="number" name="price" value="<%=feed.price%>"></div>
+									<div style="display:none;" ><input type="date" name="date" value="<%=feed.date%>"></div>
+
+
+
+						<div style="display:none;" ><input type="number" name="person[phone]" value="<%=feed.person.phone%>"></div>
+						<div style="display:none;"><input type="text" name="person[email]" value="<%=feed.person.email%>"></div>
+
+
+
+
+</div>
+	</div>
+	</form>
+
+
+<form id="cc" action="/ticket/<%=feed.train_id%>" method="POST" style="display:none;margin-left:90px;">
+		<div class="container">
+<div >
+	<div>
+ 	<label for="ccc">Credit Card number :
+		<input style="margin-left:20px" id="ccc" type="text" placeholder="card number" required>
+	</label></div>
+	<br>
+
+		<div><label for="v"><i class="fas fa-key"></i> CVV:
+		<input style="margin-left:110px" id="v" type="number" placeholder="cvv" required>
+	</label></div><br>
+		
+		<div><label for="ncc">Name on credit card:
+		<input style="margin-left:20px" id="ncc" type="text" placeholder="name on card" required>
+	</label></div>
+
+<br>
+	<div>  <label>Month of Exp:<select style="margin-left:70px">
+		<option>JAN</option>
+		<option>FEB</option>
+		<option>MARCH</option>
+		<option>APRIL</option>
+		<option>MAY</option>
+		<option>JUNE</option>
+		<option>JULY</option>
+		<option>AUG</option>
+		<option>SEPT</option>
+		<option>OCT</option>
+		<option>NOV</option>
+		<option>DEC</option>
+		<select> 
+	</label>
+</div> 
+<br>
+
+	  <div> 
+ <label>Year of Exp:<select style="margin-left:80px">
+ 	<%for(var i=2020;i<2035;i++){%>
+		<option><%=i%></option>
+		<%}%>
+		<select> 
+	</label>
+	  </div><br>
+<div>
+		<button type="submit" style="width:100px;font-size:24px;color:red;background:black;border:solid;border-color:turquoise;border-radius:6px">Pay</button><br><br>
+	</div>
+
+
+
+				<div style="display:none;"><input type="text" name="person[sex]" value="<%=feed.person.sex%>"></div>
+				<div style="display:none;" ><input type="text" name="person[name]" value="<%=feed.person.name%>"></div>
+					<div style="display:none;"><input type="text" name="classs" value="<%=feed.classs%>"></div>
+							<div style="display:none;" ><input type="number" name="person[age]" value="<%=feed.person.age%>"></div>
+								<div style="display:none;" ><input type="number" name="price" value="<%=feed.price%>"></div>
+									<div style="display:none;" ><input type="date" name="date" value="<%=feed.date%>"></div>
+
+
+						<div style="display:none;" ><input type="number" name="person[phone]" value="<%=feed.person.phone%>"></div>
+						<div style="display:none;"><input type="text" name="person[email]" value="<%=feed.person.email%>"></div>
+
+	</div>
+	</div>
+	</form>
+
+
+	<form id="mm" action="/ticket/<%=feed.train_id%>" method="POST" style="display:none;margin-left:80px;">
+		<div class="container">
+<div ><div>
+ 	<label for="cardmm">Master Card number :
+		<input style="margin-left:42px" id="cardmm" type="text" placeholder="Master card number" required>
+	</label></div><br>
+
+		<div><label for="s"><i class="fas fa-key"></i> Sequence No:
+		<input style="margin-left:75px" id="s" type="number" placeholder="Sequence No:" required>
+	</label></div><br>
+		
+		<div><label for="zz">Zip Code:
+		<input style="margin-left:120px" id="zz" type="text" placeholder="Zip Code" required>
+	</label></div><br>
+<div>
+		<button type="submit" style="width:100px;font-size:24px;color:red;background:black;border:solid;border-color:turquoise;border-radius:6px">Pay</button></div><br><br>
+
+
+
+			<div style="display:none;"><input type="text" name="person[sex]" value="<%=feed.person.sex%>"></div>
+				<div style="display:none;" ><input type="text" name="person[name]" value="<%=feed.person.name%>"></div>
+					<div style="display:none;"><input type="text" name="classs" value="<%=feed.classs%>"></div>
+							<div style="display:none;" ><input type="number" name="person[age]" value="<%=feed.person.age%>"></div>
+								<div style="display:none;" ><input type="number" name="price" value="<%=feed.price%>"></div>
+									<div style="display:none;" ><input type="date" name="date" value="<%=feed.date%>"></div>
+
+
+						<div style="display:none;" ><input type="number" name="person[phone]" value="<%=feed.person.phone%>"></div>
+						<div style="display:none;"><input type="text" name="person[email]" value="<%=feed.person.email%>"></div>
+
+
+	</div>
+	</div>
+	</form>
+
+
+
+	<form  id="amazon" action="/ticket/<%=feed.train_id%>" method="POST" style="display:none;margin-left:80px;">
+		<div class="container">
+<div ><div>
+ 	<label for="email">Email of Amazon :
+		<input style="margin-left:50px" id="email" type="email" placeholder="Email" required>
+	</label></div><br>
+
+		<div><label for="pass"><i class="fas fa-key"></i> Password:
+		<input style="margin-left:82px" id="pass" type="password" placeholder="Password" required>
+	</label></div><br>
+		
+		<div><label for="n">Amazon-Pay zip-code:
+		<input style="margin-left:20px" id="n" type="text" placeholder="Amazon Pay Zip" required>
+	</label></div><br>
+<div>
+		<button type="submit" style="width:100px;font-size:24px;color:red;background:black;border:solid;border-color:turquoise;border-radius:6px">Pay</button></div><br><br>
+
+			<div style="display:none;"><input type="text" name="person[sex]" value="<%=feed.person.sex%>"></div>
+				<div style="display:none;" ><input type="text" name="person[name]" value="<%=feed.person.name%>"></div>
+					<div style="display:none;"><input type="text" name="classs" value="<%=feed.classs%>"></div>
+							<div style="display:none;" ><input type="number" name="person[age]" value="<%=feed.person.age%>"></div>
+								<div style="display:none;" ><input type="number" name="price" value="<%=feed.price%>"></div>
+									<div style="display:none;" ><input type="date" name="date" value="<%=feed.date%>"></div>
+
+
+					<div style="display:none;" ><input type="number" name="person[phone]" value="<%=feed.person.phone%>"></div>
+						<div style="display:none;"><input type="text" name="person[email]" value="<%=feed.person.email%>">hide
+
+
+	</div>
+
+	</div>
+	</form>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+
+</body></html>
+
+
