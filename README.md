@@ -14,7 +14,7 @@ After this:Run,
 2.node app.js  or nodemon app.js   on terminal   [Assumning we are already in the project directry .]
 
 
-3.Afetr that run localhost:3000  on your favourite browser .
+3.After that run localhost:3000  on your favourite browser .
 
 Now our project is ready to run.
 
