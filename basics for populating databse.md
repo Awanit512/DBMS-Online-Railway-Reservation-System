@@ -28,8 +28,8 @@ db.seats.find();
 
 
 
-//now ek ek kreke obeject id trainn vale me dalana h
-
+//now one one we have to put obeject id of seats collection into train collection as we can see below train collection object id i " " .
+so put their object id of correesponding seats collection after putting seats collections in our database.As after that mongodb will genearte its object_id aitomatically thus we have to put that id into our train collection
 
 
 
@@ -39,7 +39,7 @@ db.seats.find();
 db.trains.insert({ source :"PATNA" , destination :"MANGALORE" , train_details : [ { number : "1225", name : "RAJDGI EXPRESS", fare : 1713, travel_time : "31H:05min:10sec", start_time : "19:10" } ], no_of_seats : { one_A : 111 , two_A : 111 , "three_A" : 111, sleeper : 111 }, no_of_station : 91, distance : "989 Km",seats_status : [ ObjectId("  ")]});
 
 
-upar me obeject id daale 
+                                          put the obeject id above  -------^^^
 
 
 
