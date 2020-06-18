@@ -4,13 +4,18 @@ This Project is just a Demo site for Indian Railway Reservation where we can boo
 
 
 
-The project start by running :
+To strat the project  :
 
 1.First we need to populate the database for that itructions are provided in redme for database and basics of database population.
+
+
 After this:Run,
 
 2.node app.js  or nodemon app.js   on terminal   [Assumning we are already in the project directry .]
+
+
 3.Afetr that run localhost:3000  on your favourite browser .
+
 Now our project is ready to run.
 
 
