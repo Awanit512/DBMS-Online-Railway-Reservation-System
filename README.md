@@ -4,7 +4,7 @@ This Project is just a Demo site for Indian Railway Reservation where we can boo
 
 
 
-To strat the project  :
+IN order to strat the project  :
 
 1.First we need to populate the database for that itructions are provided in redme for database and basics of database population.
 
